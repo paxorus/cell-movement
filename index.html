@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #canvas{background-color:#034;}    
+            #fix,#info{color:#DDD;position:absolute;top:48%;left:55%;visibility:hidden;font-family:Verdana}
+        </style>
+    </head>
+    <body>
+        <embed width="50" height="50" src="info.svg" onmouseover="display('visible','info')" onmouseout="display('hidden','info')" />
+        <embed width="50" height="50" src="wrench.svg" onclick="resize()" onmouseover="display('visible','fix')" onmouseout="display('hidden','fix')" />
+        <div id="fix">For speed, try closing other windows and programs, or check your Internet connection.
+        <br>If the Numpad cell is not moving, hit Num Lock.
+        <br>If maladjusted, hit Home to resize the canvas.</div>
+        
+        <div id="info">Navigate the three cells using the arrow keys, WASD, and Numpad.
+        <br>Hit Home to return the cells to the origin.
+        <br>Change the speed using the slider below. For issues, see the repair wizard.</div>
+        <br>Speed: <input type="range" id="stepper" min="1" max="100" onchange="stepchange()">
+        
+        <br><canvas id="canvas">Get Chrome...</canvas>
+        <script src="core.js"></script>
+
+    </body>
+</html>
